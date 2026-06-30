@@ -266,61 +266,248 @@ height:400px;
 }
 
 
+/* ==========================
+      Wedding Calendar
+========================== */
 
 .calendar-section{
-    margin:120px auto;
+    padding:100px 20px;
     text-align:center;
-    max-width:500px;
 }
 
-.calendar-title{
+.section-subtitle{
     font-family:"Cormorant Garamond", serif;
-    font-size:48px;
-    color:#31553a;
+    font-size:24px;
+    font-style:italic;
+    color:#8d8d8d;
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-family:"Cormorant Garamond", serif;
+    font-size:58px;
+    font-weight:500;
+    color:#35563b;
+    margin-bottom:45px;
+}
+
+.calendar-card{
+
+    max-width:520px;
+    margin:0 auto;
+
+    padding:45px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:28px;
+
+    border:1px solid rgba(53,86,59,.12);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08);
+
+    position:relative;
+}
+
+.calendar-card::before,
+.calendar-card::after{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+    height:2px;
+
+    background:#d9c89d;
+
+    margin:auto;
+}
+
+.calendar-card::before{
     margin-bottom:35px;
 }
 
-.calendar{
-    background:#fffefb;
-    border-radius:25px;
-    padding:35px;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+.calendar-card::after{
+    margin-top:35px;
 }
 
-.month{
-    font-size:30px;
-    font-family:"Cormorant Garamond", serif;
-    color:#31553a;
-    margin-bottom:30px;
+.calendar-month{
+
+    font-family:"Marcellus", serif;
+    font-size:28px;
+
+    letter-spacing:8px;
+
+    color:#35563b;
+
+    margin-bottom:35px;
 }
 
-.weekdays,
-.days{
+.calendar-week,
+.calendar-days{
+
     display:grid;
+
     grid-template-columns:repeat(7,1fr);
-    gap:12px;
+
+    gap:14px;
 }
 
-.weekdays div{
+.calendar-week span{
+
+    color:#9a9a9a;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
     font-weight:600;
-    color:#8b8b8b;
 }
 
-.days span{
-    width:45px;
-    height:45px;
+.calendar-days span{
+
+    width:50px;
+    height:50px;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
+    align-items:center;
+
     margin:auto;
-    border-radius:50%;
-    font-size:20px;
+
     font-family:"Cormorant Garamond", serif;
+    font-size:22px;
+
+    color:#4a4a4a;
+
+    position:relative;
 }
 
-.wedding-day{
-    background:#5e7f5d;
+.heart-day{
+
+    font-size:42px !important;
+
+    color:#5c8260;
+
+    animation:heartbeat 2.4s infinite;
+
+    text-shadow:
+        0 0 10px rgba(92,130,96,.35),
+        0 0 18px rgba(92,130,96,.18);
+}
+
+.heart-day small{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-48%);
+
+    font-size:16px;
+
     color:white;
+
+    font-family:Arial,sans-serif;
+
     font-weight:bold;
-    box-shadow:0 5px 20px rgba(94,127,93,.4);
+}
+
+.calendar-date{
+
+    margin-top:35px;
+
+    font-family:"Marcellus", serif;
+
+    font-size:30px;
+
+    letter-spacing:5px;
+
+    color:#35563b;
+}
+
+.calendar-text{
+
+    margin-top:12px;
+
+    font-family:"Cormorant Garamond", serif;
+
+    font-size:22px;
+
+    font-style:italic;
+
+    color:#8a8a8a;
+}
+
+/* Heart animation */
+
+@keyframes heartbeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    12%{
+        transform:scale(1.18);
+    }
+
+    24%{
+        transform:scale(1);
+    }
+
+    36%{
+        transform:scale(1.18);
+    }
+
+    48%{
+        transform:scale(1);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* ==========================
+      Mobile
+========================== */
+
+@media (max-width:600px){
+
+    .section-title{
+        font-size:42px;
+    }
+
+    .calendar-card{
+        padding:30px 20px;
+    }
+
+    .calendar-days span{
+        width:38px;
+        height:38px;
+        font-size:18px;
+    }
+
+    .heart-day{
+        font-size:34px !important;
+    }
+
+    .heart-day small{
+        font-size:13px;
+    }
+
+    .calendar-date{
+        font-size:22px;
+    }
+
+    .calendar-text{
+        font-size:18px;
+    }
+
 }
