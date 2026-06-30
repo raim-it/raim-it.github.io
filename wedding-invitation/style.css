@@ -390,9 +390,11 @@ height:400px;
 
 .heart-day{
 
-    font-size:42px !important;
+    font-size:62px !important;   /* было 42px — сердечко крупнее */
 
     color:#5c8260;
+
+    overflow:visible;            /* чтобы крупное сердце не обрезалось ячейкой */
 
     animation:heartbeat 2.4s infinite;
 
@@ -410,7 +412,7 @@ height:400px;
 
     transform:translate(-50%,-48%);
 
-    font-size:16px;
+    font-size:22px;              /* было 16px — цифра внутри крупнее */
 
     color:white;
 
@@ -418,7 +420,6 @@ height:400px;
 
     font-weight:bold;
 }
-
 .calendar-date{
 
     margin-top:35px;
@@ -495,11 +496,11 @@ height:400px;
     }
 
     .heart-day{
-        font-size:34px !important;
+        font-size:50px !important;
     }
 
     .heart-day small{
-        font-size:13px;
+        font-size:18px;
     }
 
     .calendar-date{
