@@ -192,6 +192,15 @@ height:400px;
     color: #39543c;
 }
 
+.word1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.8;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
 .invite-title {
     font-size: 22px;
     font-weight: 600;
@@ -209,10 +218,12 @@ height:400px;
 
 .couple {
     font-family: "Cormorant Garamond", serif;
-    font-size: 54px;
+    font-size: 44px;
     font-weight: 500;
+    font-style: oblique;
     line-height: 1.25;
     margin-bottom: 45px;
+    margin-top: 50px;
     color: #21442a;
 }
 
@@ -390,7 +401,7 @@ height:400px;
 
 .heart-day{
 
-    font-size:70px !important;   /* было 42px — сердечко крупнее */
+    font-size:80px !important;   /* было 42px — сердечко крупнее */
 
     color:#5c8260;
 
@@ -412,7 +423,7 @@ height:400px;
 
     transform:translate(-50%,-48%);
 
-    font-size:22px;              /* было 16px — цифра внутри крупнее */
+    font-size:18px;              /* было 16px — цифра внутри крупнее */
 
     color:white;
 
@@ -496,7 +507,7 @@ height:400px;
     }
 
     .heart-day{
-        font-size:50px !important;
+        font-size:70px !important;
     }
 
     .heart-day small{
@@ -509,6 +520,171 @@ height:400px;
 
     .calendar-text{
         font-size:18px;
+    }
+
+}
+
+/* Узкие экраны: уменьшаем ячейки и отступы, чтобы ничего не вылезало */
+@media (max-width:430px){
+
+    .calendar-section{
+        padding:60px 10px;
+    }
+
+    .calendar-card{
+        padding:24px 12px;
+    }
+
+    .calendar-week,
+    .calendar-days{
+        gap:6px;
+    }
+
+    .calendar-days span{
+        width:34px;
+        height:34px;
+        font-size:16px;
+    }
+
+    .heart-day{
+        font-size:60px !important;
+    }
+
+    .heart-day small{
+        font-size:14px;
+    }
+
+    .section-title{
+        font-size:36px;
+    }
+
+}
+
+/* ==========================
+        Footer
+========================== */
+
+.site-footer{
+
+    background:
+        linear-gradient(
+            rgba(33,68,42,.92),
+            rgba(25,52,32,.96)
+        ),
+                   url("https://images.unsplash.com/photo-1457089328109-e5d9bd499191?q=80&w=2000&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center;
+
+    padding:90px 20px;
+
+    text-align:center;
+
+    color:#f3efe7;
+}
+
+.footer-inner{
+    max-width:600px;
+    margin:0 auto;
+}
+
+.footer-sub{
+
+    font-family:"Cormorant Garamond", serif;
+    font-size:24px;
+    font-style:italic;
+
+    letter-spacing:2px;
+
+    color:#d9c89d;
+
+    margin-bottom:14px;
+}
+
+.footer-names{
+
+    font-family:"Cormorant Garamond", serif;
+    font-size:56px;
+    font-weight:500;
+
+    line-height:1.2;
+
+    color:#ffffff;
+
+    margin-bottom:0;
+}
+
+.footer-names span{
+
+    font-size:34px;
+    font-style:italic;
+
+    color:#d9c89d;
+
+    margin:0 6px;
+}
+
+.footer-divider{
+
+    width:90px;
+    height:2px;
+
+    background:#d9c89d;
+
+    margin:28px auto;
+}
+
+.footer-date{
+
+    font-family:"Montserrat", sans-serif;
+    font-size:18px;
+
+    letter-spacing:3px;
+
+    color:#e8e2d6;
+
+    margin-bottom:22px;
+}
+
+.footer-text{
+
+    font-family:"Cormorant Garamond", serif;
+    font-size:24px;
+    font-style:italic;
+
+    color:#f3efe7;
+
+    margin-bottom:30px;
+}
+
+.footer-credit{
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:rgba(243,239,231,.6);
+}
+
+@media (max-width:600px){
+
+    .site-footer{
+        padding:70px 18px;
+    }
+
+    .footer-names{
+        font-size:42px;
+    }
+
+    .footer-names span{
+        font-size:26px;
+    }
+
+    .footer-sub,
+    .footer-text{
+        font-size:20px;
     }
 
 }
