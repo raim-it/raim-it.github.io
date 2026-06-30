@@ -2,40 +2,46 @@ const weddingDate = new Date("August 29, 2026 18:00:00");
 
 function updateCountdown(){
 
-const now = new Date();
+  const now = new Date();
 
-const diff = weddingDate - now;
+  let diff = weddingDate - now;
+  if (diff < 0) diff = 0;
 
-const days = Math.floor(diff/(1000*60*60*24));
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(diff / (1000 * 60 * 60) % 24);
+  const minutes = Math.floor(diff / (1000 * 60) % 60);
+  const seconds = Math.floor(diff / 1000 % 60);
 
-const hours = Math.floor(diff/(1000*60*60)%24);
+  document.getElementById("countdown").innerHTML = `
 
-const minutes = Math.floor(diff/(1000*60)%60);
+  <div>
+  ${days}
+  <br>
+  Days
+  </div>
 
-document.getElementById("countdown").innerHTML = `
+  <div>
+  ${hours}
+  <br>
+  Hours
+  </div>
 
-<div>
-${days}
-<br>
-Days
-</div>
+  <div>
+  ${minutes}
+  <br>
+  Minutes
+  </div>
 
-<div>
-${hours}
-<br>
-Hours
-</div>
+  <div>
+  ${seconds}
+  <br>
+  Seconds
+  </div>
 
-<div>
-${minutes}
-<br>
-Minutes
-</div>
-
-`;
+  `;
 
 }
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown, 1000);
